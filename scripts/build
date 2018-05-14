@@ -73,6 +73,8 @@ cd $ROOT
   # Restore the sites directory.
   if [ -d sites-backup ]; then
     rm -Rf $BUILD_ROOT/www-build/sites/default
+    # Fix permissions on backup directory before restoring
+    chmod -R +w sites-backup/
     mv sites-backup/ $BUILD_ROOT/www-build/sites/default
   fi
 
