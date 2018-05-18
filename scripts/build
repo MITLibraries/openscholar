@@ -122,3 +122,11 @@ CUR_DIR=$(pwd)
   $BOWER install
   cd -
 )
+
+# MIT specific steps
+(
+  # Install Informatics theme
+  git clone https://github.com/MITLibraries/informatics_redux.git www/sites/all/themes/informatics_redux
+  # Reset permissions to the apache user
+  sudo chgrp -R apache www
+)
