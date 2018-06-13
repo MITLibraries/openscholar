@@ -121,6 +121,7 @@ projects[feeds][patch][] = "https://raw.githubusercontent.com/openscholar/opensc
 
 projects[feeds_tamper][subdir] = "contrib"
 projects[feeds_tamper][version] = 1.1
+projects[feeds_tamper][patch][] = "https://www.drupal.org/files/issues/feeds_tamper-fix-params-default-value-callback-2567431-2-7.x.patch"
 
 projects[feeds_xpathparser][subdir] = "contrib"
 projects[feeds_xpathparser][download][type] = git
