@@ -73,6 +73,8 @@ cd $ROOT
   # Restore the sites directory.
   if [ -d sites-backup ]; then
     rm -Rf $BUILD_ROOT/www-build/sites/default
+    # Fix permissions on backup directory before restoring
+    chmod -R +w sites-backup/
     mv sites-backup/ $BUILD_ROOT/www-build/sites/default
   fi
 
@@ -119,4 +121,12 @@ CUR_DIR=$(pwd)
   cd $BUILD_ROOT/openscholar
   $BOWER install --allow-root
   cd -
+)
+
+# MIT specific steps
+(
+  # Install Informatics theme
+  git clone https://github.com/MITLibraries/informatics_redux.git www/sites/all/themes/informatics_redux
+  # Reset permissions to the apache user
+  sudo chgrp -R apache www
 )
